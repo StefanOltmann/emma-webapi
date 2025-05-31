@@ -36,10 +36,10 @@ services:
             - 8100:8080
         healthcheck:
             test: [ "CMD", "curl", "-f", "http://localhost:8080/health" ]
-            interval: 5m
-            timeout: 10s
-            retries: 3
-            start_period: 10s
+            interval: 15m
+            timeout: 30s
+            retries: 4
+            start_period: 1m
 ```
 
 ### Configure EMMA
