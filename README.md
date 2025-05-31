@@ -2,10 +2,6 @@
 
 [![Kotlin](https://img.shields.io/badge/kotlin-2.1.21-blue.svg?logo=kotlin)](httpw://kotlinlang.org)
 
-<a href="https://ko-fi.com/StefanOltmann">
-    <img src="assets/support_me_on_kofi_dark.png" alt="Support me on Ko-fi" width="200">
-</a>
-
 This service connects to a Huawei EMMA Modbus device and provides values via a REST API.
 
 This project is not affiliated with or endorsed by Huawei.
