@@ -16,6 +16,8 @@ It was tested with a Huawei EMMA-A02 ("Emma Pro") running at `SmartHEMS V100R024
 
 ## Installation
 
+### Docker
+
 The easiest way to get started is by using Docker Compose.
 
 Here's a typical setup:
@@ -27,7 +29,7 @@ services:
     emma-web-api:
         image: ghcr.io/stefanoltmann/emma-webapi:latest
         container_name: emma-web-api
-        restart: on-failure:5
+        restart: always
         environment:
             # Set this to the IP address of your EMMA device
             EMMA_ADDRESS: "192.168.0.100"
@@ -38,7 +40,7 @@ services:
             - 8100:8080
         healthcheck:
             test: [ "CMD", "curl", "-f", "http://localhost:8080/health" ]
-            interval: 30s
+            interval: 5m
             timeout: 10s
             retries: 3
             start_period: 10s
@@ -51,6 +53,8 @@ Using installer access, configure the **Modbus TCP** settings:
 - Set the **Client IP Address** to the IP of the server running this service  
   *(e.g., `192.168.0.10` if that’s your Docker host)*.
 - **Disable TLS encryption** — it must be turned off for this service to connect.
+
+![App Settings](assets/app_settings.png)
 
 ## Endpoints
 
